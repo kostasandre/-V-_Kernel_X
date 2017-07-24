@@ -3,6 +3,8 @@
 # Linux/arm 3.4.0 Kernel Configuration
 #
 
+CONFIG_FORCE_FAST_CHARGE=y
+
 CONFIG_UID_CPUTIME=y
 
 CONFIG_ARM=y
