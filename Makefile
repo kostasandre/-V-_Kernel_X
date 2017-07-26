@@ -1,7 +1,7 @@
 VERSION = 3
 PATCHLEVEL = 4
 SUBLEVEL = 0
-VKXVERSION = v0.1b
+VKXVERSION = v1.0
 EXTRAVERSION = / -V- Kernel X $(VKXVERSION) /
 NAME = Saber-toothed Squirrel
 
