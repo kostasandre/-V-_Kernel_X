@@ -47,7 +47,7 @@
 #define DEF_SAMPLING_DOWN_FACTOR		(1)
 #define MAX_SAMPLING_DOWN_FACTOR		(100000)
 #define MICRO_FREQUENCY_DOWN_DIFFERENTIAL	(3)
-#define MICRO_FREQUENCY_UP_THRESHOLD		(95)
+#define MICRO_FREQUENCY_UP_THRESHOLD		(90)
 #define MICRO_FREQUENCY_MIN_SAMPLE_RATE		(10000)
 #define MIN_FREQUENCY_UP_THRESHOLD		(11)
 #define MAX_FREQUENCY_UP_THRESHOLD		(100)
@@ -98,7 +98,7 @@ static freq_table_idx pre_freq_idx[SUP_CORE_NUM] = {};
 
 #define SUP_SLOW_UP_FREQUENCY 		(1190400)
 #define SUP_HIGH_SLOW_UP_FREQUENCY 	(1190400)
-#define SUP_SLOW_UP_LOAD 		(95)
+#define SUP_SLOW_UP_LOAD 		(90)
 
 typedef struct {
 	unsigned int hist_max_load[SUP_SLOW_UP_DUR];
@@ -530,7 +530,7 @@ static ssize_t store_ui_timeout(struct kobject *a, struct attribute *b,
 	return count;
 }
 
-static int two_phase_freq_array[NR_CPUS] = {[0 ... NR_CPUS-1] = 1728000} ;
+static int two_phase_freq_array[NR_CPUS] = {[0 ... NR_CPUS-1] = 600000} ;
 
 static ssize_t show_two_phase_freq
 (struct kobject *kobj, struct attribute *attr, char *buf)
