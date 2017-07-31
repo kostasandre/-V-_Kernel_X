@@ -4,7 +4,7 @@
 ## AnyKernel setup
 # begin properties
 properties() {
-kernel.string=-V- Kernel X v1.0 by Vagelis1608 @ xda-developers
+kernel.string=-V- Kernel X v1.1 by Vagelis1608 @ xda-developers
 do.devicecheck=1
 do.modules=0
 do.cleanup=1
@@ -34,6 +34,14 @@ chmod -R 755 $ramdisk
 dump_boot;
 
 # begin ramdisk changes
+
+# Remove 'placeholder' file added by mistake in v1.0
+if [ -e placeholder ]; then
+    CHK=`cat placeholder`
+    if [ -z $CHK ]; then
+        rm -f placeholder
+    fi
+fi
 
 # end ramdisk changes
 
