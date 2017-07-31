@@ -4,7 +4,7 @@
 ## AnyKernel setup
 # begin properties
 properties() {
-kernel.string=-V- Kernel X v1.1 by Vagelis1608 @ xda-developers
+kernel.string=-V- Kernel X v1.0.1 by Vagelis1608 @ xda-developers
 do.devicecheck=1
 do.modules=0
 do.cleanup=1
