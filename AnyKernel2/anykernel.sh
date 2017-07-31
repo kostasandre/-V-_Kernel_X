@@ -5,7 +5,7 @@
 # begin properties
 properties() {
 kernel.string=-V- Kernel X v1.0.1 by Vagelis1608 @ xda-developers
-do.devicecheck=1
+do.devicecheck=0
 do.modules=0
 do.cleanup=1
 do.cleanuponabort=0
