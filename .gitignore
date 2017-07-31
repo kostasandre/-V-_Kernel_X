@@ -88,3 +88,5 @@ GTAGS
 kernel/hz.bc
 changes
 main.config
+AnyKernel2/-V-_Kernel_X_v*.zip
+AnyKernel2/zImage
