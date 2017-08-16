@@ -35,6 +35,10 @@ dump_boot;
 
 # begin ramdisk changes
 
+# Main script install
+backup_file init.rc
+insert_line init.rc "import /init.vkx.rc" before "import /init.environ.rc" "import /init.vkx.rc"
+
 # Remove 'placeholder' file added by mistake in v1.0
 if [ -e placeholder ]; then
     CHK=`cat placeholder`
