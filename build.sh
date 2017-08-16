@@ -1,5 +1,17 @@
 # Note: CROSS_COMPILE must beset manually before executing this
 
+# Clean up the build dirs using 'make clean', if -c flag was given
+if [ "$1" == "-c" ]; then
+    echo "Cleaning up..."
+    echo ""
+    make clean
+    echo ""
+    echo "Clean-up complete"
+    echo ""
+fi
+echo "Making zImage..."
+echo ""
+
 # This builds the zImage (kernel)
 # The -jx tells make how many CPUs to use, where x is the number of CPUs + 1
 # So, for my Dual-core system, x= 2 + 1 = 3
