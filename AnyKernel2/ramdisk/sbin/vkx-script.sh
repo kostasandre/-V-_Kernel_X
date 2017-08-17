@@ -26,20 +26,27 @@ if [ -z $MPDS ]; then
     MPDS=1
 fi
 
+# Check for Magisk
+if [ -e /dev/magisk ]; then
+    SYSTEM=/dev/magisk/mirror/system
+else
+    SYSTEM=/system
+fi
+
 # Force stop MPDecision if the prop persist.mpdecision.stop is set to 1
 if [ "$MPDS" == "1" ]; then
     setprop ctl.stop mpdecision
     stop mpdecision
-    if [ -e /system/bin/mpdecision ]; then
-        mount -t auto -o rw,remount /system
-        $BB cp -af /system/bin/mpdecision /system/bin/mpdecision-dis
-        $BB rm -f /system/bin/mpdecision
-        mount -t auto -o ro,remount /system
+    if [ -e $SYSTEM/bin/mpdecision ]; then
+        mount -t auto -o rw,remount $SYSTEM
+        $BB cp -af $SYSTEM/bin/mpdecision $SYSTEM/bin/mpdecision-dis
+        $BB rm -f $SYSTEM/bin/mpdecision
+        mount -t auto -o ro,remount $SYSTEM
     fi
-elif [ "$MPDS" == "0" -a -e /system/bin/mpdecision-dis ]; then
-        mount -t auto -o rw,remount /system
-        $BB cp -af /system/bin/mpdecision-dis /system/bin/mpdecision
-        $BB rm -f /system/bin/mpdecision-dis
-        mount -t auto -o ro,remount /system        
+elif [ "$MPDS" == "0" -a -e $SYSTEM/bin/mpdecision-dis ]; then
+        mount -t auto -o rw,remount $SYSTEM
+        $BB cp -af $SYSTEM/bin/mpdecision-dis $SYSTEM/bin/mpdecision
+        $BB rm -f $SYSTEM/bin/mpdecision-dis
+        mount -t auto -o ro,remount $SYSTEM      
 fi
 
