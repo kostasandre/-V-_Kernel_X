@@ -88,6 +88,6 @@ GTAGS
 kernel/hz.bc
 changes
 main.config
-AnyKernel2/zips
+zips
 AnyKernel2/zImage
 *dt.img

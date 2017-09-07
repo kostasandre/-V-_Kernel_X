@@ -77,17 +77,17 @@ if [ "$NOZIP" != "1" ]; then
     echo ""
     echo "Creating zip..."
     cd AnyKernel2
-    zip -r9 -V-_Kernel_X_v$VERSION.zip * -x README.md zips
+    zip -r9 UPDATE-V-_Kernel_X_v$VERSION.zip * -x README.md
     if [ -e /media/sf_Android ]; then
         echo ""
         echo "sf_android found. Copying..."
         echo ""
-        sudo cp -avf -V-_Kernel_X_v*.zip /media/sf_Android
+        sudo cp -avf UPDATE-V-_Kernel_X_v*.zip /media/sf_Android
         echo ""
         echo "Done"
     fi
-    cp -avf -V-_Kernel_X_v*.zip zips
-    rm -f -V-_Kernel_X_v*.zip
     cd ..
+    cp -avf AnyKernel2/UPDATE-V-_Kernel_X_v*.zip zips
+    rm -f AnyKernel2/UPDATE-V-_Kernel_X_v*.zip
 fi
 
